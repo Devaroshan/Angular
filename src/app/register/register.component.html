@@ -1,0 +1,46 @@
+
+<div class="row2">
+    <div class="log">
+        
+        <form #loginForm="ngForm" (submit)="onSubmit()" class="ml-1">            
+            <div class="form-group"> 
+                <div class="error" *ngIf="error!=null">{{error}}</div>                                   
+                <label for="inp1"><b>Name</b></label><br>
+                <input type="text" id="name" name="name" minlength="4" maxlength="40" [(ngModel)]="cl.cname" #name="ngModel" required>
+                <!-- <div class="error" *ngIf="copies.errors?.max">Number of copies should be greater than 0.</div> -->
+                <div class="error"  *ngIf="name.touched==true && name.invalid==true">Name is required.</div>
+                <br><br>
+            </div>
+            <div class="form-group">                                 
+                <label for="inp1"><b>Address</b></label><br>
+                <input type="text" id="address" name="address" minlength="4" maxlength="100" [(ngModel)]="cl.caddress" #address="ngModel" required>
+                <!-- <div class="error" *ngIf="copies.errors?.max">Number of copies should be greater than 0.</div> -->
+                <div class="error"  *ngIf="address.touched==true && address.invalid==true">Address is required.</div>
+                <br><br>
+            </div>
+            <div class="form-group">                                
+                <label for="inp1"><b>Email Id</b></label><br>
+                <input type="email" id="u_name" name="user_name" minlength="4" maxlength="40" [(ngModel)]="cl.userid" #user_name="ngModel" required email>
+                <!-- <div class="error" *ngIf="copies.errors?.max">Number of copies should be greater than 0.</div> -->
+                <div class="error"  *ngIf="user_name.touched==true && user_name.invalid==true">Email id is required.</div>
+                <br><br>
+            </div>
+            <div class="form-group">                                
+                <label for="inp1"><b>Password</b></label><br>
+                <input type="password" id="pwd" name="pass_word" minlength="4" maxlength="40" [(ngModel)]="cl.password" #pass_word="ngModel" required>
+                <!-- <div class="error" *ngIf="copies.errors?.max">Number of copies should be greater than 0.</div> -->
+                <div class="error"  *ngIf="cpass_word.touched==true && cpass_word.invalid==true ">Password is required.</div>
+                <br><br>
+            </div> 
+            <div class="form-group">
+                <label for="inp2"><b>Confirm Password</b></label><br>
+                <input type="password" id="cpswd" name="cpass_word" minlength="4" maxlength="20" [(ngModel)]="cl.cPassword" #cpass_word="ngModel" required>
+                <!-- <div class="error" *ngIf="copies.errors?.max">Number of copies should be greater than 0.</div> -->
+                <div class="error"  *ngIf="cpass_word.touched==true && cpass_word.invalid==true">Confirm Password is required.</div>
+                <div class="error"  *ngIf="cpass_word == pass_word">Password doesn't match</div>
+                <br><br>
+            </div>        
+            <button type="submit" [disabled]="!loginForm.valid" class="btn btn-outline-dark">Register</button>
+        </form>
+    </div>
+</div>

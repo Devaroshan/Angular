@@ -1,0 +1,28 @@
+<div style="align-content:center">
+    <h2>Your Interests ?</h2>
+</div>
+
+<div class="row4">
+    <div>
+        <form (submit)="FavSubmit()">
+            <div class="text-danger"></div>                     
+            <div class="form-group">
+                <span class="far fa-user"></span>                                 
+                <label for="inp1"><b>Author</b></label><br>
+                <!-- <input id="author" name="author"> -->
+                <select name="dropdown" id="author" (ngModelChange)="selectchange1($event)" [(ngModel)]="f.author"><option *ngFor="let items of author" [ngValue]="items">{{items}}</option></select>                               
+                <br><br>
+            </div>
+            <div class="form-group">
+                <span class="far fa-user"></span>                                 
+                <label for="inp1"><b>Genre</b></label><br>
+                <!-- <input id="genre" name="genre">   -->
+                <select name="jonour" id="jonour" (ngModelChange)="selectchange2($event)" [(ngModel)]="f.jonour"><option *ngFor="let items of jonour" [ngValue]="items">{{items}}</option></select>             
+                <br><br>
+            </div>            
+            <div class="form-group">
+                <input type="submit" value="Apply" class="btn btn-outline-dark" />
+            </div>
+        </form>
+    </div>
+</div>

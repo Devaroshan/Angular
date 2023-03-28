@@ -1,0 +1,37 @@
+<div class="error" *ngIf="error!=null">{{error}}</div> 
+<h1>Delete Confirmation</h1>
+<div>
+    <hr />
+    <dl class="row">
+        <dd class="col-sm-10">
+            Bname: {{bk.bname}}
+        </dd>
+        <dd class="col-sm-10">
+            Author:{{bk.author}}
+        </dd>
+        <dd class="col-sm-10">
+            Genre: {{bk.jonour}}
+        </dd> 
+        <dd class="col-sm-10">
+            Price: {{bk.price}}
+        </dd> 
+        <dd class="col-sm-10">
+            Number of Copies Ordered: {{bk.noofCopies}}
+        </dd>        
+    </dl>
+</div>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form (submit)="onRemove(bk.bkid)">
+            <input type="hidden" />
+            <input type="submit" value="Remove" />
+        </form>
+    </div>
+</div>
+
+
+<div>
+    <a [routerLink]="['/books']">Back to Store</a>
+</div>
+

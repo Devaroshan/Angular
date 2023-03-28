@@ -1,0 +1,42 @@
+<div class="error" *ngIf="error!=null">{{error}}</div> 
+<h1>Confirmation</h1>
+<div>
+    <hr />
+    <dl class="row">
+        <dd class="col-sm-10">
+            Bname: {{Book_Details.bname}}
+        </dd>
+        <dd class="col-sm-10">
+            Author:{{Book_Details.author}}
+        </dd>
+        <dd class="col-sm-10">
+            Genre: {{Book_Details.jonour}}
+        </dd> 
+        <dd class="col-sm-10">
+            Price: {{Book_Details.price}}
+        </dd> 
+        <dd class="col-sm-10">
+            Available Copies: {{Book_Details.noofCopies}}
+        </dd>        
+    </dl>
+</div>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form #buyForm="ngForm" (submit)="onSubmit()" class="ml-1">
+            <div>
+                <label for="inp1"><b>Number of Copies</b></label><br>
+                <input type="number" id="inp1" name="no" [(ngModel)]="NoofBooksOrdered" min="1" max="Book_Details.noofCopies" #copies="ngModel" required>
+                <!-- <div class="error" *ngIf="copies.errors?.max">Number of copies should be greater than 0.</div> -->
+                <div class="error"  *ngIf="copies.touched==true && copies.invalid==true">Number of copies is required.</div>
+                <br><br>
+            </div>        
+            <button type="submit" [disabled]="!buyForm.valid" class="btn btn-outline-dark">Add to Cart</button>        
+        </form>
+    </div>
+</div>
+
+
+<div>
+    <a [routerLink]="['/books']">Back to Store</a>
+</div>

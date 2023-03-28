@@ -1,0 +1,60 @@
+
+<h1>Purchase History</h1>
+<p>
+    <a [routerLink]="['/books']">Back to Store</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                Book id
+            </th>
+            <th>
+                Name
+            </th>
+            <th>
+                Author
+            </th>
+            <th>
+                Genre
+            </th>
+            <th>
+                Price
+            </th>
+            <th>
+                Number of Copies
+            </th>
+            <th>
+                Total Price
+            </th>
+        </tr>
+    </thead>
+    <tbody >
+        
+            <tr *ngFor="let item of cart">
+                <td>
+                    {{item.bid}}
+                </td>
+                <td>
+                    {{item.bname}}
+                </td>
+                <td>
+                    {{item.author}}
+                </td>
+                <td>
+                    {{item.jonour}}
+                </td>
+                <td>
+                    {{item.price}}
+                </td>
+                <td>
+                    {{item.noofCopies}}
+                </td>
+                <td>
+                    {{item.totalPrice}}
+                </td>                      
+                
+            </tr>
+    </tbody>
+</table>
+        

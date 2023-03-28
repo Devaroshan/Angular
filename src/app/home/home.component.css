@@ -1,0 +1,13 @@
+body {
+    flex-direction: row;
+    margin-bottom: 60px;
+    /* background-image: url("https://images.pexels.com/photos/694740/pexels-photo-694740.jpeg?cs=srgb&dl=pexels-min-an-694740.jpg&fm=jpg");
+    height: 100%; */
+    /* Center and scale the image nicely */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    overflow: hidden;
+    /* position: fixed; */
+} 

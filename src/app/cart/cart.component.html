@@ -1,0 +1,79 @@
+<div class="error" *ngIf="error!=null">{{error}}</div> 
+<h1>Cart</h1>
+<p>
+    <a [routerLink]="['/books']">Back to Store</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                Book id
+            </th>
+            <th>
+                Name
+            </th>
+            <th>
+                Author
+            </th>
+            <th>
+                Genre
+            </th>
+            <th>
+                Price
+            </th>
+            <th>
+                Number of Copies
+            </th>
+            <th>
+                Status
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        
+            <tr *ngFor="let item of cart">
+                <td>
+                    {{item.bid}}
+                </td>
+                <td>
+                    {{item.bname}}
+                </td>
+                <td>
+                    {{item.author}}
+                </td>
+                <td>
+                    {{item.jonour}}
+                </td>
+                <td>
+                    {{item.price}}
+                </td>
+                <td>
+                    {{item.noofCopies}}
+                </td>
+                <td *ngIf="item.status == 1">
+                    Payment Done
+                </td>
+                <td *ngIf="item.status == 0">
+                    Payment not Done
+                </td>
+                <td *ngIf="item.status == 0">
+                    <a [routerLink]="['/Cart-Details',item.bkid]">Remove</a>
+                </td>
+            </tr>
+    </tbody>
+</table>
+<div>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            Total Price
+        </dt>
+        <dd class="col-sm-10">
+            {{cl.totalPrice}}
+        </dd>
+    </dl>
+    <form (submit)="onSubmit()">
+        <input type="hidden" />
+        <input type="submit" value="Make Payment" class="btn btn-outline-dark" />
+    </form>
+</div>

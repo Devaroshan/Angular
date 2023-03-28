@@ -1,0 +1,46 @@
+
+<div *ngIf="b_f">
+    <p>
+        <a class="btn btn-outline-dark" [routerLink]="['/Cart']">
+            Cart
+        </a>
+        <a class="btn btn-outline-dark" [routerLink]="['/History']">
+            History
+        </a>
+               
+    </p>
+    
+    <div class="container"> 
+        <ul class="u" >
+            <li class="l" *ngFor="let item of Books" [style.background-image]="getColourJonour(item.jonour)">
+                <div class="card">
+                    <div class="card-body">
+                        <div class="box" >
+                            <div>
+                                <!-- @Html.DisplayFor(modelItem => item.Bname) -->
+                                {{item.bname}}
+                            </div>
+                            <div>
+                                {{item.author}}
+                            </div>
+                            <div>
+                                {{item.jonour}}
+                            </div>
+                            <div>
+                                {{item.price}}
+                            </div>                    
+                            <span>
+                                <a class="btn btn-outline-dark" [routerLink]="['/Details',item.bid]">
+                                    Buy
+                                </a>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+                
+            </li>
+            
+                
+        </ul>
+    </div>
+</div>

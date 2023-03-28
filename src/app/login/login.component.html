@@ -1,0 +1,25 @@
+
+<div class="row1">
+    <div class="log">
+        
+        <form #loginForm="ngForm" (submit)="onSubmit()" class="ml-1">            
+            <div class="loginForm">
+                <span class="far fa-user"></span>
+                <div class="error" *ngIf="error!=null">{{error}}</div>                    
+                <label for="inp1"><b>Email Id</b></label><br>
+                <input type="email" id="u_name" name="user_name" minlength="4" maxlength="40" [(ngModel)]="userid" #user_name="ngModel" required email>
+                <!-- <div class="error" *ngIf="copies.errors?.max">Number of copies should be greater than 0.</div> -->
+                <div class="error"  *ngIf="user_name.touched==true && user_name.invalid==true">Email id is required</div>                
+                <br><br>
+            </div> 
+            <div class="loginForm">                
+                <label for="inp2"><b>Password</b></label><br>
+                <input type="password" id="u_pswd" name="pass_word" minlength="4" maxlength="20" [(ngModel)]="pwd" #pass_word="ngModel" required>
+                <!-- <div class="error" *ngIf="copies.errors?.max">Number of copies should be greater than 0.</div> -->
+                <div class="error"  *ngIf="pass_word.touched==true && pass_word.invalid==true ">Password is required.</div>
+                <br><br>
+            </div>        
+            <button type="submit" [disabled]="!loginForm.valid" class="btn btn-outline-dark">Login</button>
+        </form>
+    </div>
+</div>
